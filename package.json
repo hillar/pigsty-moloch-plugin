@@ -2,7 +2,7 @@
   "name": "pigsty-moloch-plugin",
   "version": "0.0.0",
   "description": "A simple plugin to tag moloch sessions with snort/suricata event tags",
-  "main": "./index.js",
+  "main": "./lib/pigsty-moloch-plugin.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
