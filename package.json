@@ -1,4 +1,4 @@
-ll{
+{
   "name": "pigsty-moloch-plugin",
   "version": "0.0.0",
   "description": "A simple plugin to tag moloch sessions with snort/suricata event tags",
@@ -7,7 +7,7 @@ ll{
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "https://github.com/hillar/pigsty-moloch-plugin",
-  "author": "Hillar Aarelaid",
+  "author": "Hillar Aarelaid (hillar@aarelaid.net)",
   "license": "GPLv3",
   "dependencies": {
     "debug": "~0.7.2"
