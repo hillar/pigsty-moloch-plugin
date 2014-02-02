@@ -10,6 +10,7 @@
   "author": "Hillar Aarelaid (hillar@aarelaid.net)",
   "license": "GPLv3",
   "dependencies": {
-    "debug": "~0.7.2"
+    "debug": "~0.7.2",
+    "hashtable":"~0.1.4",
   }
 }
