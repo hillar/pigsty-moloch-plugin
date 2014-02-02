@@ -11,6 +11,6 @@
   "license": "GPLv3",
   "dependencies": {
     "debug": "~0.7.2",
-    "hashtable":"~0.1.4",
+    "hashtable":"~0.1.4"
   }
 }
