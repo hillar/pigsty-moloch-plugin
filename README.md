@@ -12,14 +12,17 @@ see https://github.com/threatstack/pigsty
 
 ... in writing ...
 
+```
+ 
+ $# npm install https://github.com/hillar/pigsty-moloch-plugin/archive/master.tar.gz
 
- npm install https://github.com/hillar/pigsty-moloch-plugin/archive/master.tar.gz
+ $# DEBUG=pigsty-moloch-plugin pigsty -c /etc/pigsty/config.js
 
- DEBUG=pigsty-moloch-plugin pigsty -c /etc/pigsty/config.js
+ ```
 
 ## sample config
 
-```json
+```
 
 module.exports = {
 
