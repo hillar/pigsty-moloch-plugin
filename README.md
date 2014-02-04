@@ -62,15 +62,55 @@ module.exports = {
   output: {
   
     'moloch-plugin': {
-	print_stats:  true,
-	iniparser_module_location: '/opt/moloch/viewer/node_modules/iniparser/lib/node-iniparser.js',
-	moloch_config_file_location: '/opt/moloch/etc/config.ini',
-	async_module_location: '/opt/moloch/viewer/node_modules/async/lib/async.js',
-	keepaliveagent_module_location: '/opt/moloch/viewer/node_modules/keep-alive-agent/index.js',
-	db_module_location: '/opt/moloch/viewer/db.js'
-
+      molochConfigFileLocation: '/data/moloch/etc/config.ini',
+      asyncModuleLocation: '/data/moloch/viewer/node_modules/async/lib/async.js',
+      keepaliveagentModuleLocation: '/data/moloch/viewer/node_modules/keep-alive-agent/index.js',
+      dbModuleLocation : '/data/moloch/viewer/db.js',  
+      printStatstoConsole: true,
     },
   } 
 }
 
 ```
+
+options you must set
+
+molochConfigFileLocation full path
+dbModuleLocation full path
+
+
+options you can set:
+
+iniparserModuleLocation
+asyncModuleLocation
+keepaliveagentModuleLocation full path
+
+eventQueueMaxSize int 
+minFreeMemory int bytes
+maxHeapSize int bytes
+
+maxKeepAliveSockets int
+
+printStatstoConsole true/false
+printStatsInterval int seconds
+
+tagPrefix
+
+
+optiond withs hardcoded defaults
+
+iniparserModuleLocation = 'iniparser';
+keepaliveagentModuleLocation = 'keep-alive-agent';
+asyncModuleLocation = 'async';
+
+eventQueueMaxSize = 1024;
+maxHeapSize = 1073741824*10;
+maxKeepAliveSockets = 32;
+minFreeMemory = 1073741824/10;
+tagPrefix = 'unified2';
+
+printStatstoConsole = null;
+printStatsInterval = null;
+tagPrefix = 'unified2'
+
+  
