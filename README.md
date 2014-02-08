@@ -4,19 +4,32 @@
 
 see https://github.com/aol/moloch
 
+Moloch is an open source, large scale IPv4 packet capturing (PCAP), indexing and database system. A simple web interface is provided for PCAP browsing, searching, and exporting. Moloch is not meant to replace IDS engines but instead work along side them to store and index all the network traffic in standard PCAP format, providing fast access.
+
 ## Pigsty
 
 see https://github.com/threatstack/pigsty
 
+Pigsty is designed as a replacement for Barnyard2. It's written in Javascript using Node.js. Pigsty's output architecture is plugin based.
+
 ## Install 
 
+1. install moloch or run it
+1. install suricata on moloch capture machine or run it
+1. install pigsty on same machine 
+1. install pigsty-moloch-plugin
+1. edit pigsty config: 
+  * set reference file locations
+  * set log dir location
+  * add output section 'moloch-plugin'
+1. run pigsty with DEBUG=pigsty-moloch-plugin
 
 
 ```
  
  $# npm install https://github.com/hillar/pigsty-moloch-plugin/archive/master.tar.gz
 
- $#vi /etc/pigsty/config.js
+ $# vi /etc/pigsty/config.js
 
  $# DEBUG=pigsty-moloch-plugin pigsty -c /etc/pigsty/config.js
 
@@ -70,7 +83,7 @@ module.exports = {
       dbModuleLocation : '/data/moloch/viewer/db.js',  
       printStatstoConsole: true,
     },
-    
+
   } 
 }
 
@@ -78,25 +91,54 @@ module.exports = {
 ## options
 ### options you must set
 
-```
-molochConfigFileLocation full path
-dbModuleLocation full path
-```
+
+1. molochConfigFileLocation 
+
+   set it for example '/data/moloch/etc/config.ini', plugin reads elasticsearch related options from moloch config
+
+1. dbModuleLocation 
+
+  moloch viewer uses its own db module, what you can not (yet) install with npm
+  so you have to point on its location
+  set if for example '/data/moloch/viewer/db.js'
+
 
 ### options you may set
 
-```
-iniparserModuleLocation full path
-asyncModuleLocation full path
-keepaliveagentModuleLocation full path
-eventQueueMaxSize int 
-minFreeMemory int bytes
-maxHeapSize int bytes
-maxKeepAliveSockets int
-printStatstoConsole true/false
-printStatsInterval int seconds
-tagPrefix
-```
+
+* iniparserModuleLocation 
+* asyncModuleLocation 
+* keepaliveagentModuleLocation 
+
+  if you do not want to polute your capture machine with modules what are already there, just point on them
+  see sample config
+  if not set, plugin looks for them as installed with 'npm install ... -g'
+
+* eventQueueMaxSize int 
+
+  how many events to keep in prededup queue
+  default is 128
+
+* minFreeMemory int bytes
+* maxHeapSize int bytes
+
+  if you set those and the limit is reached, plugin will emit error, tells the spooler that it is full and pauses (no seppuku), recovery possible but not quarantied
+  have some log collecting/parsing/monitoring/whatever running 
+
+
+* maxKeepAliveSockets int
+
+  how many sockets to keep open with elasticsearch
+  default is 20 
+
+* printStatstoConsole true/false
+* printStatsInterval int seconds
+
+  prints stats to console, see usage
+
+* tagPrefix
+
+  your favorite prefix here, default is 'unified2'
 
 ### options hardcoded defaults
 
@@ -112,7 +154,7 @@ tagPrefix = 'unified2'
 
 ## usage 
 
-... in writing ...
+
 
 ```
 
