@@ -72,45 +72,82 @@ module.exports = {
 }
 
 ```
+## options
+### options you must set
 
-options you must set
-
+```
 molochConfigFileLocation full path
 dbModuleLocation full path
+```
 
+### options you may set
 
-options you can set:
-
-iniparserModuleLocation
-asyncModuleLocation
+```
+iniparserModuleLocation full path
+asyncModuleLocation full path
 keepaliveagentModuleLocation full path
-
 eventQueueMaxSize int 
 minFreeMemory int bytes
 maxHeapSize int bytes
-
 maxKeepAliveSockets int
-
 printStatstoConsole true/false
 printStatsInterval int seconds
-
 tagPrefix
+```
 
+### options hardcoded defaults
 
-optiond withs hardcoded defaults
-
+```
 iniparserModuleLocation = 'iniparser';
 keepaliveagentModuleLocation = 'keep-alive-agent';
 asyncModuleLocation = 'async';
-
-eventQueueMaxSize = 1024;
-maxHeapSize = 1073741824*10;
-maxKeepAliveSockets = 32;
-minFreeMemory = 1073741824/10;
-tagPrefix = 'unified2';
-
-printStatstoConsole = null;
-printStatsInterval = null;
+eventQueueMaxSize = 128;
+maxKeepAliveSockets = 20;
+printStatsInterval = 60;
 tagPrefix = 'unified2'
+```
+
+### stats
+#### reading history in
+
+```
+Sat Feb 08 2014 02:58:26 GMT+0200 (EET) running since Sat Feb 08 2014 02:53:26 GMT+0200 (EET) elapsed 300s
+stats for period 60s last event Fri Feb 07 2014 07:57:40 GMT+0200 (EET) 
+                       total     eps     last    eps
+              eventsIn 5K        17      1001    16
+         eventsDropped 0         0       0       0
+         eventsDeduped 1K        5       294     4
+          eventsPosted 3K        11      707     11
+       sessionsFounded 2K        9       630     10
+      sessionsNotFound 609       2       89      1
+        sessionsTagged 2K        9       662     11
+     sessionsTagFailed 0         0       0       0
+waitingForSessionShort 0         0       0       0
+ waitingForSessionLong 0         0       0       0
+              in queue 128 ( Fri Feb 07 2014 07:56:29 GMT+0200 (EET) - Fri Feb 07 2014 07:57:40 GMT+0200 (EET) )
+               in post 16 cummulative averages search:1416.2413494892726 update:4478.562879542753
+```
+
+
+#### tailing
+
+```
+Sat Feb 08 2014 14:55:28 GMT+0200 (EET) running since Sat Feb 08 2014 02:53:26 GMT+0200 (EET) elapsed 43321s
+stats for period 60s last event Sat Feb 08 2014 14:55:25 GMT+0200 (EET) 
+                       total   eps   last  eps
+              eventsIn 2M      54    1K    29
+         eventsDropped 25      0     1     0
+         eventsDeduped 1M      26    874   14
+          eventsPosted 1M      28    975   16
+       sessionsFounded 1M      27    920   15
+      sessionsNotFound 38K     0     31    0
+        sessionsTagged 1M      27    920   15
+     sessionsTagFailed 0       0     0     0
+waitingForSessionShort 724     0     33    0
+ waitingForSessionLong 365     0     -89   -1
+              in queue 128 ( Sat Feb 08 2014 14:55:17 GMT+0200 (EET) - Sat Feb 08 2014 14:55:25 GMT+0200 (EET) )
+               in post 0 cummulative averages search:18.512892846629544 update:30.991601954585136
+```
+
 
   
