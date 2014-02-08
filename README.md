@@ -5,7 +5,7 @@ ver 0.0.0
 This plugin tags moloch sessions with IDS alerts, so you can have queries like `tags == snort_classification_trojan-activity` or `tags == suricata__signatureID_2016758`
 Alerts are readed from _*unified2*_ log files. Snort, Suricata, Sagan can write unified2 logs. 
 
-It should work as simple as `npm install` and `vi config`
+It should work as simple as `npm install` and `vi config`.
 
 
 ## Moloch
@@ -32,7 +32,7 @@ Pigsty is designed as a replacement for Barnyard2. It's written in Javascript us
   * add output section 'moloch-plugin'
 1. run pigsty with DEBUG=pigsty-moloch-plugin
 
-> depends on  https://npmjs.org/package/hashtable and 
+> ! depends on  https://npmjs.org/package/hashtable 
 
 
 ```
@@ -102,14 +102,18 @@ module.exports = {
 ### options you must set
 
 
-1. molochConfigFileLocation 
+1. *molochConfigFileLocation* 
 
-   set it for example '/data/moloch/etc/config.ini', plugin reads elasticsearch related options from moloch config
+   plugin reads elasticsearch related options from moloch config
 
-1. dbModuleLocation 
+   set it for example '/data/moloch/etc/config.ini'
+
+1. *dbModuleLocation* 
 
   moloch viewer uses its own db module, what you can not (yet) install with npm
+  
   so you have to point on its location
+  
   set if for example '/data/moloch/viewer/db.js'
 
 
@@ -121,24 +125,29 @@ module.exports = {
 * keepaliveagentModuleLocation 
 
   if you do not want to polute your capture machine with modules what are already there, just point on them
+  
   see sample config
+  
   if not set, plugin looks for them as installed with 'npm install ... -g'
 
 * eventQueueMaxSize int 
 
   how many events to keep in prededup queue
+  
   default is 128
 
 * minFreeMemory int bytes
 * maxHeapSize int bytes
 
-  if you set those and the limit is reached, plugin will emit error, tells the spooler that it is full and pauses (no seppuku), recovery possible but not quarantied
+  if you set those and the limit is reached, plugin will emit error, tells the spooler that it is full and pauses (no seppuku), recovery possible but not guaranteed
+  
   have some log collecting/parsing/monitoring/whatever running 
 
 
 * maxKeepAliveSockets int
 
   how many sockets to keep open with elasticsearch
+  
   default is 20 
 
 * printStatstoConsole true/false
@@ -231,5 +240,12 @@ Swap:        0k total,        0k used,        0k free, 43505496k cached
 14623 syslog    20   0  321m 2284  892 S    0  0.0  14:02.32 288m rsyslogd 
  9623 moloch    20   0  110m  13m 1992 S   42  0.0 277:57.47 100m fprobe
 ```
+
+#TODO
+
+* lint
+* check grammar
+* indice support for other than dayly
+* sending stats to moloch viewer
 
   
