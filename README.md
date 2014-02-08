@@ -1,4 +1,12 @@
-#pigsty-moloch-plugin ver 0.0.0
+#pigsty-moloch-plugin 
+
+ver 0.0.0
+
+This plugin tags moloch sessions with IDS alerts, so you can have queries like `tags == snort_classification_trojan-activity` or `tags == suricata__signatureID_2016758`
+Alerts are readed from _*unified2*_ log files. Snort, Suricata, Sagan can write unified2 logs. 
+
+It should work as simple as `npm install` and `vi config`
+
 
 ## Moloch
 
@@ -15,7 +23,7 @@ Pigsty is designed as a replacement for Barnyard2. It's written in Javascript us
 ## Install 
 
 1. install moloch or run it
-1. install suricata on moloch capture machine or run it
+1. install suricata on moloch capture machine and set it to log into unified2 or run it
 1. install pigsty on same machine 
 1. install pigsty-moloch-plugin
 1. edit pigsty config: 
@@ -23,6 +31,8 @@ Pigsty is designed as a replacement for Barnyard2. It's written in Javascript us
   * set log dir location
   * add output section 'moloch-plugin'
 1. run pigsty with DEBUG=pigsty-moloch-plugin
+
+> depends on  https://npmjs.org/package/hashtable and 
 
 
 ```
