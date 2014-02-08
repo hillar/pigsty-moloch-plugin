@@ -8,13 +8,15 @@ see https://github.com/aol/moloch
 
 see https://github.com/threatstack/pigsty
 
-## usage 
+## Install 
 
-... in writing ...
+
 
 ```
  
  $# npm install https://github.com/hillar/pigsty-moloch-plugin/archive/master.tar.gz
+
+ $#vi /etc/pigsty/config.js
 
  $# DEBUG=pigsty-moloch-plugin pigsty -c /etc/pigsty/config.js
 
@@ -68,6 +70,7 @@ module.exports = {
       dbModuleLocation : '/data/moloch/viewer/db.js',  
       printStatstoConsole: true,
     },
+    
   } 
 }
 
@@ -105,6 +108,16 @@ eventQueueMaxSize = 128;
 maxKeepAliveSockets = 20;
 printStatsInterval = 60;
 tagPrefix = 'unified2'
+```
+
+## usage 
+
+... in writing ...
+
+```
+
+   $# pigsty -c /etc/pigsty/config.js > /var/log/pigsty.log &
+
 ```
 
 ### stats
@@ -149,5 +162,22 @@ waitingForSessionShort 724     0     33    0
                in post 0 cummulative averages search:18.512892846629544 update:30.991601954585136
 ```
 
+##### top
+
+```
+top - 15:34:41 up 25 days,  5:50,  2 users,  load average: 6.83, 6.07, 4.93
+Tasks: 250 total,   2 running, 248 sleeping,   0 stopped,   0 zombie
+Cpu(s):  4.4%us,  1.8%sy,  0.0%ni, 93.5%id,  0.0%wa,  0.0%hi,  0.3%si,  0.0%st
+Mem:  48961520k total, 48616640k used,   44880k free,    29192k buffers
+Swap:        0k total,        0k used,        0k free, 43505496k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  DATA COMMAND
+ 3066 suricata  20   0 13.2g 6.6g 6800 S   99  7.0  35247:26  13g Suricata-Main 
+10200 moloch    20   0 1491m 1.4g  33m S   34  1.5 436:49.67 1.4g moloch-capture 
+14575 moloch    20   0  858m 211m 3208 S    0  0.2  39:44.95 816m node
+12066 moloch    20   0  722m  80m 6428 S    7  0.1  68:21.89 685m pigsty
+14623 syslog    20   0  321m 2284  892 S    0  0.0  14:02.32 288m rsyslogd 
+ 9623 moloch    20   0  110m  13m 1992 S   42  0.0 277:57.47 100m fprobe
+```
 
   
