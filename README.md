@@ -172,13 +172,13 @@ module.exports = {
 ### options hardcoded defaults
 
 ```
-iniparserModuleLocation = 'iniparser';
-keepaliveagentModuleLocation = 'keep-alive-agent';
-asyncModuleLocation = 'async';
-eventQueueMaxSize = 128;
-maxKeepAliveSockets = 20;
-printStatsInterval = 60;
-tagPrefix = 'unified2'
+iniparserModuleLocation : 'iniparser';
+keepaliveagentModuleLocation : 'keep-alive-agent';
+asyncModuleLocation : 'async';
+eventQueueMaxSize : 128;
+maxKeepAliveSockets : 20;
+printStatsInterval : 60;
+tagPrefix : 'unified2'
 ```
 
 # Usage 
