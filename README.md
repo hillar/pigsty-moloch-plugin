@@ -91,10 +91,10 @@ module.exports = {
   
     'moloch-plugin': {
       molochConfigFileLocation: '/data/moloch/etc/config.ini',
+      dbModuleLocation : '/data/moloch/viewer/db.js', 
       iniparserModuleLocation: '/data/moloch/viewer/node_modules/iniparser/index.js',
       asyncModuleLocation: '/data/moloch/viewer/node_modules/async/lib/async.js',
-      keepaliveagentModuleLocation: '/data/moloch/viewer/node_modules/keep-alive-agent/index.js',
-      dbModuleLocation : '/data/moloch/viewer/db.js',  
+      keepaliveagentModuleLocation: '/data/moloch/viewer/node_modules/keep-alive-agent/index.js', 
       printStatstoConsole: true,
     },
 
@@ -121,11 +121,6 @@ module.exports = {
   set if for example '/data/moloch/viewer/db.js'
 
 
-> it is recomended to set other modules to point on moloch install
->  * iniparserModuleLocation 
-> * asyncModuleLocation 
-> * keepaliveagentModuleLocation 
-
 
 ### options you may set
 
@@ -134,11 +129,14 @@ module.exports = {
 * asyncModuleLocation 
 * keepaliveagentModuleLocation 
 
-  if you do not want to polute your capture machine with modules what are already there, just point on them
+ 
+> set those modules to point on moloch install
+> * iniparserModuleLocation : '/data/moloch/viewer/node_modules/iniparser/index.js',
+> * asyncModuleLocation : '/data/moloch/viewer/node_modules/async/lib/async.js',
+> * keepaliveagentModuleLocation : '/data/moloch/viewer/node_modules/keep-alive-agent/index.js',
+
   
-  see sample config
-  
-  if not set, plugin looks for them as installed with 'npm install ... -g'
+  if not set, plugin looks for them as installed with *'npm install ... -g'*
 
 * eventQueueMaxSize int 
 
