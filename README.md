@@ -2,25 +2,28 @@
 
 ver 0.0.0
 
-This plugin tags moloch sessions with IDS alerts, so you can have queries like `tags == snort_classification_trojan-activity` or `tags == suricata__signatureID_2016758`
+This plugin tags moloch sessions with IDS alerts, so you can have queries like 
+
+`tags == snort_classification_trojan-activity` or `tags == suricata__signatureID_2016758`
+
 Alerts are readed from _*unified2*_ log files. Snort, Suricata, Sagan can write unified2 logs. 
 
 It should work as simple as `npm install` and `vi config`.
 
 
-## Moloch
+### Moloch
 
 see https://github.com/aol/moloch
 
 Moloch is an open source, large scale IPv4 packet capturing (PCAP), indexing and database system. A simple web interface is provided for PCAP browsing, searching, and exporting. Moloch is not meant to replace IDS engines but instead work along side them to store and index all the network traffic in standard PCAP format, providing fast access.
 
-## Pigsty
+### Pigsty
 
 see https://github.com/threatstack/pigsty
 
 Pigsty is designed as a replacement for Barnyard2. It's written in Javascript using Node.js. Pigsty's output architecture is plugin based.
 
-## Install 
+# Install 
 
 1. install moloch or run it
 1. install suricata on moloch capture machine and set it to log into unified2 or run it
@@ -32,7 +35,7 @@ Pigsty is designed as a replacement for Barnyard2. It's written in Javascript us
   * add output section 'moloch-plugin'
 1. run pigsty with DEBUG=pigsty-moloch-plugin
 
-> ! depends on  https://npmjs.org/package/hashtable 
+> ! depends on  https://npmjs.org/package/hashtable , debug and pigsty-plugin 
 
 
 ```
@@ -88,6 +91,7 @@ module.exports = {
   
     'moloch-plugin': {
       molochConfigFileLocation: '/data/moloch/etc/config.ini',
+      iniparserModuleLocation: '/data/moloch/viewer/node_modules/iniparser/index.js',
       asyncModuleLocation: '/data/moloch/viewer/node_modules/async/lib/async.js',
       keepaliveagentModuleLocation: '/data/moloch/viewer/node_modules/keep-alive-agent/index.js',
       dbModuleLocation : '/data/moloch/viewer/db.js',  
@@ -115,6 +119,12 @@ module.exports = {
   so you have to point on its location
   
   set if for example '/data/moloch/viewer/db.js'
+
+
+> it is recomended to set other modules to point on moloch install
+>  * iniparserModuleLocation 
+> * asyncModuleLocation 
+> * keepaliveagentModuleLocation 
 
 
 ### options you may set
@@ -171,7 +181,7 @@ printStatsInterval = 60;
 tagPrefix = 'unified2'
 ```
 
-## usage 
+# Usage 
 
 
 
@@ -246,6 +256,7 @@ Swap:        0k total,        0k used,        0k free, 43505496k cached
 * lint
 * check grammar
 * indice support for other than dayly
+* get refresh_interval from ela
 * sending stats to moloch viewer
 
   
