@@ -21,7 +21,7 @@
     },
     "dependencies": {
         "node-syslog-logger-simple":"~0.0.1",
-        "pigsty-plugin": "~0.1.8",
+        "pigsty-plugin": "~0.1.0",
         "debug": "~0.7.2",
         "hashtable":"~0.1.4"
       },
