@@ -1,17 +1,33 @@
 {
-  "name": "pigsty-moloch-plugin",
-  "version": "0.0.0",
-  "description": "A simple plugin to tag moloch sessions with snort/suricata event tags",
-  "main": "./lib/pigsty-moloch-plugin.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": "https://github.com/hillar/pigsty-moloch-plugin",
-  "author": "Hillar Aarelaid (hillar@aarelaid.net)",
-  "license": "GPLv3",
-  "dependencies": {
-    "pigsty-plugin": "~0.1.8",
-    "debug": "~0.7.2",
-    "hashtable":"~0.1.4"
-  }
+    "name": "pigsty-moloch-plugin",
+    "version": "0.0.0",
+    "main": "./lib/pigsty-moloch-plugin.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "engines": {
+        "node" : ">=0.8.0"
+    },
+    "description": "Plugin to tag moloch sessions with IDS event tags",
+    "author": "Hillar Aarelaid (hillar@aarelaid.net)",
+    "homepage": "http://github.com/hillar/pigsty-moloch-plugin",
+    "repository" :
+    {
+        "type" : "git",
+        "url" : "git@github.com:hillar/pigsty-moloch-plugin.git"
+    },
+    "bugs": {
+        "url": "https://github.com/hillar/pigsty-moloch-plugin/issues"
+    },
+    "dependencies": {
+        "node-syslog-logger-simple":"~0.0.1",
+        "pigsty-plugin": "~0.1.8",
+        "debug": "~0.7.2",
+        "hashtable":"~0.1.4"
+      },
+    "licenses": [{
+        "type": "Simplified BSD License",
+        "url": "http://en.wikipedia.org/wiki/BSD_licenses"
+    }],
+    "tags": ["moloch", "pigsty", "IDS", "PCAP", "unified2"]
 }
