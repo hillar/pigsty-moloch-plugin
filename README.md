@@ -92,7 +92,7 @@ module.exports = {
     'moloch-plugin': {
       molochConfigFileLocation: '/data/moloch/etc/config.ini',
       dbModuleLocation : '/data/moloch/viewer/db.js', 
-      iniparserModuleLocation: '/data/moloch/viewer/node_modules/iniparser/index.js',
+      iniparserModuleLocation: '/data/moloch/viewer/node_modules/iniparser/lib/node-iniparser.js',
       asyncModuleLocation: '/data/moloch/viewer/node_modules/async/lib/async.js',
       keepaliveagentModuleLocation: '/data/moloch/viewer/node_modules/keep-alive-agent/index.js', 
       printStatstoConsole: true,
@@ -131,7 +131,7 @@ module.exports = {
 
  
 > set those modules to point on moloch install
-> * iniparserModuleLocation : '/data/moloch/viewer/node_modules/iniparser/index.js',
+> * iniparserModuleLocation : '/data/moloch/viewer/node_modules/iniparser/lib/node-iniparser.js',
 > * asyncModuleLocation : '/data/moloch/viewer/node_modules/async/lib/async.js',
 > * keepaliveagentModuleLocation : '/data/moloch/viewer/node_modules/keep-alive-agent/index.js',
 
