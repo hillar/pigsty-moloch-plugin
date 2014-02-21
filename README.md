@@ -185,7 +185,7 @@ tagPrefix : 'unified2'
 
 ```
 
-   $# pigsty -c /etc/pigsty/config.js > /var/log/pigsty.log &
+   $# pigsty -c /etc/pigsty/config.js -D
 
 ```
 
