@@ -1,6 +1,6 @@
 #pigsty-moloch-plugin 
 
-ver 0.0.0
+ver 0.0.1
 
 This plugin tags moloch sessions with IDS alerts, so you can have queries like 
 
