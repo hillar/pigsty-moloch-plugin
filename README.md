@@ -10,6 +10,8 @@ Alerts are readed from _*unified2*_ log files. Snort, Suricata, Sagan can write 
 
 It should work as simple as `npm install` and `vi config`.
 
+see slides http://slid.es/hillar/pigsty-moloch-plugin
+
 
 ### Moloch
 
