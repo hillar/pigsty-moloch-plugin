@@ -1,3 +1,9 @@
+see 
+* https://github.com/ccdcoe/CDMCS/tree/master/Moloch/vagrant/singlehost#moloch--suricata--eek-in-single-box
+* https://gist.github.com/hillar/d721f0e98bc748b90108cb162fbc14c7
+* https://gist.github.com/hillar/409a18e1604c70bb3804
+
+----
 #pigsty-moloch-plugin 
 
 ver 0.0.1
